@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flexing and Transitioning</title>
+
+
+    <link rel="stylesheet/less" href="styles/panels.less">
+    <script src="scripts/less.js"></script>
+</head>
+<body>
+    
+    <div class="panels" onclick="switchPage(this);">
+
+        <div class="panel red">content</div>
+
+        <div class="panel blue">content</div>
+
+    </div>
+
+    <!-- <button>This is a button</button> -->
+
+</body>
+
+<script>
+
+function switchPage(el) {
+
+    var isPage2 = el.className.indexOf("page-2") > -1;
+
+    el.className = isPage2 ? "panels" : "panels page-2";
+
+}
+</script>
+</html>

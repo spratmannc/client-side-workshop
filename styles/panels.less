@@ -1,0 +1,83 @@
+@color-blue: blue;
+@color-red: red;
+@color-violet: violet;
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.panels {
+
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    height: 100%;
+
+    .panel {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex: 0 0 100%;
+        transition: margin-left 1s;
+        
+        &.red {
+            background-color: @color-red;
+            // animation: redChanger 3s infinite;
+        }
+        
+        &.blue {
+            background-color: @color-blue;
+        }
+    }
+    
+    &.page-2 {
+        
+        .panel.red {
+            margin-left: -100%;
+        }
+        
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .panels {
+        .panel {
+            &.red {
+                animation: redChanger 3s infinite;
+                
+            }
+        }
+    }
+}
+
+@keyframes redChanger {
+    0% {
+        background-color: @color-red;
+    }
+
+    50% {
+        background-color: @color-violet;
+    }
+
+    100% {
+        background-color: @color-red;
+    }
+}
+
+
+button {
+    padding: 20px;
+    background-color: @color-blue;
+    color: white;
+
+    &:hover {
+        background-color: @color-violet;
+    }
+
+    &:active {
+        background-color: black;
+    }
+}
